@@ -10,8 +10,8 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 #COPY html /usr/share/nginx/html
 
 RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
-RUN cat /etc/nginx/conf.d/nginx.conf
+#COPY nginx.conf /etc/nginx/conf.d
+#RUN cat /etc/nginx/conf.d/nginx.conf
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
