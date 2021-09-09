@@ -30,10 +30,7 @@ connection.connect(function (err) {
 
     sql = "select * from people";
     connection.query(sql, function (err, result) {
-        if (err) {
-            error.insertError = err;
-            throw err;
-        }
+        if (err) throw err;
         list.data = '';
         result.forEach(function(value) {
             list.data += `<li>${value.name}</li>\n`;

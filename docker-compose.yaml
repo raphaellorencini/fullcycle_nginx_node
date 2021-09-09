@@ -10,7 +10,7 @@ services:
     networks: 
       - node-network
     volumes: 
-      - ./node:/usr/src/app
+      - app-volume:/usr/src/app
     tty: true
     ports: 
       - "3000:3000"
@@ -52,6 +52,9 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks: 
       - node-network
+
+volumes: 
+  app-volume:
 
 networks: 
   node-network:
